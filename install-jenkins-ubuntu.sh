@@ -46,40 +46,40 @@ chmod +x /opt/apache-tomcat-9.0.8/bin/*.sh
 ufw allow 8080/tcp
 
 # Create Service files
-echo [Unit] >> /etc/systemd/system/tomcat.service
-echo Description=Tomcat 9 servlet container >> /etc/systemd/system/tomcat.service
-echo After=network.target >> /etc/systemd/system/tomcat.service
-echo  >> /etc/systemd/system/tomcat.service
-echo [Service] >> /etc/systemd/system/tomcat.service
-echo Type=forking >> /etc/systemd/system/tomcat.service
-echo  >> /etc/systemd/system/tomcat.service
-echo User=root >> /etc/systemd/system/tomcat.service
-echo Group=root >> /etc/systemd/system/tomcat.service
-echo  >> /etc/systemd/system/tomcat.service
-echo Environment="JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /etc/systemd/system/tomcat.service
-echo Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom -Djava.awt.headless=true" >> /etc/systemd/system/tomcat.service
-echo  >> /etc/systemd/system/tomcat.service
-echo Environment="CATALINA_BASE=/opt/apache-tomcat-9.0.8" >> /etc/systemd/system/tomcat.service
-echo Environment="CATALINA_HOME=/opt/apache-tomcat-9.0.8" >> /etc/systemd/system/tomcat.service
-echo Environment="CATALINA_PID=/opt/apache-tomcat-9.0.8/temp/tomcat.pid" >> /etc/systemd/system/tomcat.service
-echo Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC" >> /etc/systemd/system/tomcat.service
-echo  >> /etc/systemd/system/tomcat.service
-echo ExecStart=/opt/apache-tomcat-9.0.8/bin/startup.sh >> /etc/systemd/system/tomcat.service
-echo ExecStop=/opt/apache-tomcat-9.0.8/bin/shutdown.sh >> /etc/systemd/system/tomcat.service
-echo  >> /etc/systemd/system/tomcat.service
-echo [Install] >> /etc/systemd/system/tomcat.service
-echo WantedBy=multi-user.target >> /etc/systemd/system/tomcat.service
+echo [Unit] >> /etc/systemd/system/jenkins.service
+echo Description=Tomcat 9 servlet container >> /etc/systemd/system/jenkins.service
+echo After=network.target >> /etc/systemd/system/jenkins.service
+echo  >> /etc/systemd/system/jenkins.service
+echo [Service] >> /etc/systemd/system/jenkins.service
+echo Type=forking >> /etc/systemd/system/jenkins.service
+echo  >> /etc/systemd/system/jenkins.service
+echo User=root >> /etc/systemd/system/jenkins.service
+echo Group=root >> /etc/systemd/system/jenkins.service
+echo  >> /etc/systemd/system/jenkins.service
+echo Environment="JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /etc/systemd/system/jenkins.service
+echo Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom -Djava.awt.headless=true" >> /etc/systemd/system/jenkins.service
+echo  >> /etc/systemd/system/jenkins.service
+echo Environment="CATALINA_BASE=/opt/apache-tomcat-9.0.8" >> /etc/systemd/system/jenkins.service
+echo Environment="CATALINA_HOME=/opt/apache-tomcat-9.0.8" >> /etc/systemd/system/jenkins.service
+echo Environment="CATALINA_PID=/opt/apache-tomcat-9.0.8/temp/tomcat.pid" >> /etc/systemd/system/jenkins.service
+echo Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC" >> /etc/systemd/system/jenkins.service
+echo  >> /etc/systemd/system/jenkins.service
+echo ExecStart=/opt/apache-tomcat-9.0.8/bin/startup.sh >> /etc/systemd/system/jenkins.service
+echo ExecStop=/opt/apache-tomcat-9.0.8/bin/shutdown.sh >> /etc/systemd/system/jenkins.service
+echo  >> /etc/systemd/system/jenkins.service
+echo [Install] >> /etc/systemd/system/jenkins.service
+echo WantedBy=multi-user.target >> /etc/systemd/system/jenkins.service
 
 # Start tomcat
 sudo systemctl daemon-reload
-sudo systemctl start tomcat
+sudo systemctl start jenkins
 
 # Set auto start tomcat as a system boot
-sudo systemctl enable tomcat
+sudo systemctl enable jenkins
 
 # Clean downloades files
 rm /opt/apache-tomcat-9.0.8.zip
 apt-get autoremove
 
-echo "Jenkins is successfully installed at /opt/apache-tomcat-9.0.8/webapps/jenkins" For Aceess tomcat Go to http://localhost:8080/jenkins/
-echo "you can start and stop jenkins using command : sudo service tomcat stop|start|status|restart"
+echo "Jenkins is successfully installed at /opt/apache-tomcat-9.0.8/webapps/jenkins" For Aceess Jenkins Go to http://localhost:8080/jenkins/
+echo "you can start and stop Jenkins using command : sudo service jenkins stop|start|status|restart"
