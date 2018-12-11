@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #######################################
-# Bash script to install a Tomcat in CentOS
+# Bash script to install a Jenkins in CentOS
 # Author: Subhash (serverkaka.com)
 
 # Check if running as root
