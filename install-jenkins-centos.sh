@@ -2,6 +2,7 @@
 
 #######################################
 # Bash script to install a Jenkins in CentOS
+# jenkins Installed in Tomcat
 # Author: Subhash (serverkaka.com)
 
 # Check if running as root
@@ -63,5 +64,5 @@ service tomcat enable
 rm /opt/apache-tomcat-9.0.8.zip
 yum autoremove
 
-echo "Jenkins is successfully installed at /opt/apache-tomcat-9.0.8" For Aceess jomcat Go to http://localhost:8080/jenkins/
-echo "you can start and stop jenkins using command : sudo service tomcat stop|start|status|restart"
+echo "Jenkins is successfully installed at /opt/apache-tomcat-9.0.8" For Aceess jenkins Go to http://localhost:8080/jenkins/
+echo "you can start and stop jenkins using command : sudo service jenkins stop|start|status|restart"
