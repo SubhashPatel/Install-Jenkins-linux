@@ -9,6 +9,6 @@ Install Jenkins using single shell script in linux (centos and ubuntu)
    > `sudo ./install-jenkins-ubuntu.sh`
 
 ## Install jenkins in Centos
-   `chmod +x install-jenkins-centos.sh`
+   > `chmod +x install-jenkins-centos.sh`
    
-   `sudo ./install-jenkins-centos.sh`
+   > `sudo ./install-jenkins-centos.sh`
