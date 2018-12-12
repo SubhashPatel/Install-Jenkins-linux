@@ -19,20 +19,6 @@ else
      exit 1
 fi
 
-# Check Hardware Prerequisite
-RAM=$(free -m | awk '/^Mem:/{print $2}')
-HDD=$(df -Pm . | awk 'NR==2 {print $4}')
-
-if [ "$RAM" -le "980" ]; then
-   echo "system need minimum 1GB RAM for Install Jenkins" 1>&2
-   exit 1
-fi
-
-if [ "$HDD" -le "1023" ]; then
-   echo "system need minimum 1GB HDD for Install Jenkins" 1>&2
-   exit 1
-fi
-
 # Prerequisite
 apt-get install unzip -y
 
